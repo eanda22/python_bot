@@ -9,6 +9,7 @@ Replace {your-bot-token} and {your-guild-name} with the correct bot token and gu
 # .env
 DISCORD_TOKEN={your-bot-token}
 DISCORD_GUILD={your-guild-name}
+WEATHER_API_KEY={your-api-key}
 ```
 
 # Commands

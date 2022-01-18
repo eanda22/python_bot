@@ -15,6 +15,7 @@ from dotenv import load_dotenv
 load_dotenv()
 TOKEN = os.getenv("DISCORD_TOKEN")
 GUILD = os.getenv("DISCORD_GUILD")
+WEATHER_API_KEY =  os.getenv("WEATHER_API_KEY")
 
 # client = discord.Client()
 
@@ -70,7 +71,7 @@ async def weather(ctx, arg):
 
 def _get_weather(city):
     base_url = "https://api.openweathermap.org/data/2.5/weather?"
-    api_key = "61014df7b199691919ecc0d5a097ebc8"
+    api_key = WEATHER_API_KEY
     full_url = base_url + "appid=" + api_key + "&q=" + city + "&units=imperial"
     response = requests.get(full_url)
     if response.status_code == 200:
