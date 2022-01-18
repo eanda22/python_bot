@@ -2,6 +2,15 @@
 
 This bot is just for me to play around with the discord.py API and practice Python.
 
+# Setup env
+Create a .env file: <br>
+Replace {your-bot-token} and {your-guild-name} with the correct bot token and guild name
+```
+# .env
+DISCORD_TOKEN={your-bot-token}
+DISCORD_GUILD={your-guild-name}
+```
+
 # Commands
 
 Every command starts with an exclamation point: ! <br>
@@ -22,4 +31,8 @@ This will take a city name as an argument, and returns:
 This command uses the OpenWeatherMap API to get the weather data <br>
 Link: https://developer.accuweather.com/?gclid=CjwKCAiA55mPBhBOEiwANmzoQkeVVsre809PcMcX4fNyvRLDulM1PNpDlNpF-lER-MjyHS0TdkUvVBoCRS8QAvD_BwE
 
-
+## Advice
+!advice <br>
+This will give you a random piece of advice <br>
+Uses the advice slip API <br>
+Link: https://api.adviceslip.com/
