@@ -2,6 +2,7 @@
 import os
 import time
 from unicodedata import name
+from urllib import response
 import requests, json
 
 import discord
@@ -33,16 +34,16 @@ async def on_ready():
 async def hello(ctx):
     await ctx.channel.send("Hello!")
 
-
-@client.command(name="thanos")
-async def thanos(ctx):
-    await ctx.channel.send(file=discord.File("images/thanos.jpg"))
-
-
-@client.command(name="jack")
-async def jack(ctx):
-    await ctx.channel.send(file=discord.File("images/jack.jpg"))
-
+@client.command(name="advice")
+async def advice(ctx):
+    url = "https://api.adviceslip.com/advice"
+    response = requests.get(url)
+    final_advice = response.json()["slip"]["advice"]
+    if response.status_code == 200:
+        await ctx.channel.send(
+            f"Here is a short and random piece of advice: \n"
+            + final_advice
+            )
 
 @client.command(name="weather")
 async def weather(ctx, arg):
